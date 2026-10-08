@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de alunos</title>
+</head>
+<body>
+    <h1>Lista de alunos</h1>
+    <p><a href="{% url 'cadastrar_aluno' %}">Novo aluno</a></p>
+
+    {% if alunos %}
+        <ul>
+            {% for aluno in alunos %}
+                <li>
+                    {{ aluno.nome }} - {{ aluno.idade }} anos -
+                    Matriculado: {% if aluno.matriculado %}Sim{% else %}Não{% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Nenhum aluno cadastrado.</p>
+    {% endif %}
+</body>
+</html>

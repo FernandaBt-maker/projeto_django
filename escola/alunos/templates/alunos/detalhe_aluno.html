@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhe do aluno</title>
+</head>
+<body>
+    {% if aluno %}
+        <h1>{{ aluno.nome }}</h1>
+    {% else %}
+        <p>Nenhum aluno cadastrado.</p>
+    {% endif %}
+</body>
+</html>
